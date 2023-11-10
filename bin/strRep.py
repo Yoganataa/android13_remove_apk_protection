@@ -6,7 +6,7 @@ from configobj import ConfigObj
 
 def lineNumByPhrase(phrase, source, isText=0, startsAt=0):
 	if isText:
-		if isText == 1 or isText == True:
+		if isText in [1, True]:
 			source = source.splitlines()
 		for (i, line) in enumerate(source):
 			if i >= startsAt and line.startswith(phrase):
@@ -27,10 +27,9 @@ def fileReplaceRange(filename, startIndex, endIndex, content):
 		for i, line in enumerate(lines):
 			if i not in range(startIndex, endIndex + 1):
 				f.write(line)
-			else:
-				if not wrote:
-					f.write(content + '\n')
-					wrote = True
+			elif not wrote:
+				f.write(content + '\n')
+				wrote = True
 
 
 # Main script
