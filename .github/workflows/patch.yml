@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
      ROM_URL:
-      description: 'Services.jar Url'
+      description: 'https://gcp.apranet.eu.org/files/services.jar'
       required: true
       default: ''
 jobs:
